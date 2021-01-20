@@ -1,0 +1,10 @@
+router-id ${BabelID}
+export-table 254
+local-path-readwrite /run/higgs.ctl
+default type tunnel link-quality true max-rtt-penalty 1024 rtt-max 1024
+default split-horizon false hello-interval 20 rxcost 32
+
+interface foo
+
+redistribute ip ${NET} ge 32 le 96 allow
+redistribute local deny

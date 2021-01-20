@@ -1,0 +1,26 @@
+#!/bin/bash
+#Address block for main NET
+export NET=2a0d:2904::/44
+#Route table
+export Table=100
+#Address Prefix should be 2a0d:2904:xxxx:xxxx
+export Prefix=2a0d:2904:0:2
+#CIDR should be 56-64
+export CIDR=64
+#The ipv6 port which wireguard listen on. Should be same with v4 transport port in rait.conf
+export IPv6Port=39991
+#Should be true if you have v4 transport in rait.conf
+export IPv4=true
+#Should be true if you have v6 transport in rait.conf
+export IPv6=true
+#Set 2a0d:2904::/44 route to higgs
+export Route=true
+#If this is forward gateway
+export Forward=true
+#If this is BGP gateway
+export BGP=false
+export BGPInterface=wgalan
+export BGPGateway=fe80::1
+export BGPAnnounce=true
+export BGPBlockInputPort="3128,53" 
+export BGPBlockOutputPort="25" 

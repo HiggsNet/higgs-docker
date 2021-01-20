@@ -1,0 +1,13 @@
+version: "3"
+services: 
+  higgs:
+    build: higgs
+    network_mode: host
+    privileged: true
+    cap_add: 
+      - NET_ADMIN
+    volumes: 
+      - ./env:/etc/higgs/env
+      - ./rait.conf:/etc/higgs/rait.conf
+      - /var/run/netns:/var/run/netns
+    command: ["start"]
